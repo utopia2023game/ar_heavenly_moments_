@@ -9,22 +9,23 @@ abstract class Controller
 {
     //
     public function migrate()
-    {
-        $value = 'status';
-        dd();
+    { 
+        
         $input = Request()->all();
         try {
-            $id = $request->id;
+            $id = $input['id'];
             if ($id == 0) {
-                $value = 'install';
+                Artisan::call('migrate:install');
             } else if ($id == 1) {
-                $value = 'refresh';
+                Artisan::call('migrate:refresh');
+            }else{
+                Artisan::call('migrate:status');
             }
         } catch (\Throwable $th) {
             //throw $th;
         }
 
-        Artisan::call('migrate:' . $value);
+        dd(Artisan::output());
     }
     //
     public function migrateByDataBaseName(Request $request)

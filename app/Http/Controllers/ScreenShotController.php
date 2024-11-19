@@ -13,31 +13,31 @@ class ScreenShotController extends Controller
     {
 
         $input = Request()->all();
-        // dd($input);
+        dd($input);
         $data = array();
         $data['url_image'] = '';
         $data['url_qr_code'] = '';
         $data['success'] = true;
 
-        // $file_name = rand(1000, 9999) . '_' . $input['data']->getClientOriginalName();
-        // // $destinationPath = 'uploads/' . $type . '/' . $file_name;
+        $file_name = rand(1000, 9999) . '_' . $input['data']->getClientOriginalName();
+        // $destinationPath = 'uploads/' . $type . '/' . $file_name;
         $destinationPath = 'uploads/';
-        // $input['data']->move($destinationPath, $file_name);
+        $input['data']->move($destinationPath, $file_name);
 
-        // try {
-        //     $ScreenShot = ScreenShot::create([
-        //         'image_path' => $destinationPath . $file_name,
-        //     ]);
-        //     $data['url_image'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
-        //     $data['url_qr_code'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
-        // } catch (\Throwable $th) {
-        //     $data['success'] = false;
-        //     return $data;
-        // }
+        try {
+            $ScreenShot = ScreenShot::create([
+                'image_path' => $destinationPath . $file_name,
+            ]);
+            $data['url_image'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
+            $data['url_qr_code'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
+        } catch (\Throwable $th) {
+            $data['success'] = false;
+            return $data;
+        }
 
-        return $this->sizeFormat($this->folderSize($destinationPath));
+        // return $this->sizeFormat($this->folderSize($destinationPath));
 
-        // return $data;
+        return $data;
     }
 
     public function sizeFormat($bytes)

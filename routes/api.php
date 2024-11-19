@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 
 Route::post('upload_screen_shot', [ScreenShotController::class, 'uploadScreenShot'])->name('uploadScreenShot');
+Route::get('/migrate', [ScreenShotController::class, 'migrate'])->name('migrate');
