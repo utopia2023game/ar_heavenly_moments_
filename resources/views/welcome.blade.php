@@ -14,10 +14,11 @@
 </head>
 
 <body style="background: black ">
+<h1 style="text-align: center ;margin: 4% ;color:white">لحظه های بهشتی</h1>
 
     <div style="text-align: center ;margin: 4% ;">
         <img id="screenshot_image"
-            src="https://tarsimdg.com/wp-content/uploads/2023/01/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1-%D8%AD%D8%A7%D8%AC-%D9%82%D8%A7%D8%B3%D9%85-%D8%B3%D9%84%DB%8C%D9%85%D8%A7%D9%86%DB%8C-14-732x1024.jpg"
+            src="https://a.mersadstudio.ir/uploads/{{ $image_path }}"
             alt="documentation screenshot" style='object-fit: cover ;border-radius: 4px ;' onended="downloadImage()" />
     </div>
 </body>
@@ -44,17 +45,17 @@
     // }
 
     async function downloadImage() {
-        const imageSrc = window.document.getElementById('screenshot_image').currentSrc;
-        const image = await fetch(imageSrc)
-        const imageBlog = await image.blob()
-        const imageURL = URL.createObjectURL(imageBlog)
+        // const imageSrc = window.document.getElementById('screenshot_image').currentSrc;
+        // const image = await fetch(imageSrc)
+        // const imageBlog = await image.blob()
+        // const imageURL = URL.createObjectURL(imageBlog)
 
-        const link = document.createElement('a')
-        link.href = imageURL
-        link.download = 'image file name here'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+        // const link = document.createElement('a')
+        // link.href = imageURL
+        // link.download = 'ali.jpg'
+        // document.body.appendChild(link)
+        // link.click()
+        // document.body.removeChild(link)
     }
 
     downloadImage();

@@ -7,37 +7,58 @@ use Illuminate\Http\Request;
 
 class ScreenShotController extends Controller
 {
-    //
-
+    
     public function uploadScreenShot()
     {
 
         $input = Request()->all();
-        dd($input);
         $data = array();
-        $data['url_image'] = '';
         $data['url_qr_code'] = '';
-        $data['success'] = true;
+        $data['success'] = 0;
 
-        $file_name = rand(1000, 9999) . '_' . $input['data']->getClientOriginalName();
-        // $destinationPath = 'uploads/' . $type . '/' . $file_name;
+        $format = substr($input['data']->getClientOriginalName(),-4);
+        $file_name = $this->generateUnique() . $format;
         $destinationPath = 'uploads/';
         $input['data']->move($destinationPath, $file_name);
 
         try {
             $ScreenShot = ScreenShot::create([
-                'image_path' => $destinationPath . $file_name,
+                'image_path' =>  $file_name,
             ]);
-            $data['url_image'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
-            $data['url_qr_code'] = 'dkndcdakc.ir/' . $destinationPath . $file_name;
+            
+            $url_image = 'https://a.mersadstudio.ir/?iph='. $file_name;
+            $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image . '&size=200x200&color=0-0-0&bgcolor=255-255-255&margin=20';
+            $data['success'] = $ScreenShot->id;
         } catch (\Throwable $th) {
-            $data['success'] = false;
             return $data;
         }
+        
+        
 
-        // return $this->sizeFormat($this->folderSize($destinationPath));
+        return [$data ,$this->sizeFormat($this->folderSize($destinationPath))];
 
-        return $data;
+        // return $data;
+    }
+    
+    
+    public static function generateUnique()
+    {
+
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        // $characters = '0123456789';
+        $charactersNumber = strlen($characters);
+        $codeLength = 32;
+
+        $code = '';
+
+        while (strlen($code) < $codeLength) {
+            $position = rand(0, $charactersNumber - 1);
+            $character = $characters[$position];
+            $code = $code . $character;
+        }
+
+        return $code;
+
     }
 
     public function sizeFormat($bytes)
