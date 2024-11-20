@@ -17,7 +17,7 @@ class ScreenShotController extends Controller
         $data['success'] = 0;
 
         // return 'hello';
-        return filetype($input['data']);
+        // return filetype($input['data']);
 
         $format = substr($input['data']->getClientOriginalName(),-4);
         $file_name = $this->generateUnique() . $format;
