@@ -16,7 +16,7 @@ class ScreenShotController extends Controller
         $data['url_qr_code'] = '';
         $data['success'] = 0;
 
-        return 'hello';
+        // return 'hello';
         return filetype($input['data']);
 
         $format = substr($input['data']->getClientOriginalName(),-4);
