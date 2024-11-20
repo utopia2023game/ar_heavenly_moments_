@@ -16,6 +16,9 @@ class ScreenShotController extends Controller
         $data['url_qr_code'] = '';
         $data['success'] = 0;
 
+        return 'hello';
+        return filetype($input['data']);
+
         $format = substr($input['data']->getClientOriginalName(),-4);
         $file_name = $this->generateUnique() . $format;
         $destinationPath = 'uploads/';
@@ -27,7 +30,7 @@ class ScreenShotController extends Controller
             ]);
             
             $url_image = 'https://a.mersadstudio.ir/?iph='. $file_name;
-            $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image . '&size=200x200&margin=16';
+            $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image . '&size=200x200';
             $data['success'] = $ScreenShot->id;
         } catch (\Throwable $th) {
             return $data;
@@ -35,9 +38,9 @@ class ScreenShotController extends Controller
         
         
 
-        return [$data ,$this->sizeFormat($this->folderSize($destinationPath))];
+        // return [$data ,$this->sizeFormat($this->folderSize($destinationPath))];
 
-        // return $data;
+        return $data;
     }
     
     
