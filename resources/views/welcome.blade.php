@@ -163,7 +163,7 @@
 
         @media (max-width: 768px) {
             img {
-                max-height: 40vh;
+                max-height: 70vh;
                 /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
                 max-width: 100%;
                 /* حداکثر عرض تصویر */
@@ -189,14 +189,14 @@
                 /* استفاده از فونت ایران سنس */
                 /* display: flex;
                 flex-direction: column; */
-                height: 100vh;
+                height: 90vh;
                 /* overflow: hidden; */
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
             }
 
             img {
-                max-height: 50vh;
+                max-height: 70vh;
                 /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
                 max-width: 100%;
                 /* حداکثر عرض تصویر */
