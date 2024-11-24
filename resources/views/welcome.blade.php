@@ -164,18 +164,6 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                margin: 0;
-                /* font-family: Arial, sans-serif; */
-                font-family: 'BZar', 'BTraffic', Arial, sans-serif;
-                /* استفاده از فونت ایران سنس */
-                /* display: flex;
-                flex-direction: column; */
-                height: 90vh;
-                overflow: hidden;
-                /* جلوگیری از اسکرول */
-                background-color: #000000;
-            }
             header {
                 font-size: 1.3em;
             }
@@ -207,8 +195,8 @@
     </header>
 
     <main>
-        {{-- <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" /> --}}
-        <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" />
+        <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" />
+        {{-- <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" /> --}}
         <div id="fallback-message" class="fallback-message">
             <div style="justify-items: center;">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
