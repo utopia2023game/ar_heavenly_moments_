@@ -170,7 +170,7 @@
                 /* display: flex;
                 flex-direction: column; */
                 height: 90vh;
-                overflow: hidden;
+                overflow: scroll;
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
             }
