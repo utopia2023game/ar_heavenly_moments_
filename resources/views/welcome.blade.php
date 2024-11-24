@@ -129,7 +129,7 @@
         }
 
         .fallback-message {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #e9e9e9;
             display: none;
         }
@@ -163,11 +163,21 @@
 
         @media (max-width: 768px) {
             header {
-                font-size: 1.5em;
+                font-size: 1.3em;
             }
 
             footer {
                 font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 450px) {
+            header {
+                font-size: 0.8em;
+            }
+
+            footer {
+                font-size: 0.6em;
             }
         }
     </style>
@@ -184,7 +194,7 @@
     <main>
         <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" />
 
-        {{-- <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" /> --}}
+        <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" />
         <div id="fallback-message" class="fallback-message">
             <div style="justify-items: center;">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
