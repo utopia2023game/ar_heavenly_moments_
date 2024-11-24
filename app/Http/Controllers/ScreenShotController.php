@@ -34,7 +34,7 @@ class ScreenShotController extends Controller
             ]);
 
             $url_image = 'https://a.mersadstudio.ir/?iph=' . $file_name;
-            $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image . '&size=200x200';
+            $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image ;
             $data['success'] = $ScreenShot->id;
         } catch (\Throwable $th) {
             return $data;
