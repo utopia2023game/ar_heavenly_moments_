@@ -166,10 +166,36 @@
         @media (max-width: 768px) {
             header {
                 font-size: 1.3em;
+                height: 12vh;
             }
+
+            body {
+                margin: 0;
+                /* font-family: Arial, sans-serif; */
+                font-family: 'BZar', 'BTraffic', Arial, sans-serif;
+                /* استفاده از فونت ایران سنس */
+                /* display: flex;
+                flex-direction: column; */
+                height: 70vh;
+                overflow: hidden;
+                background-color: #000000;
+            }
+
+            img {
+                height: 70vh;
+                /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
+                max-width: 100%;
+                /* حداکثر عرض تصویر */
+                object-fit: cover;
+                display: none;
+                /* Initially hide the image */
+            }
+
+
 
             footer {
                 font-size: 0.8em;
+                height: 8vh;
             }
         }
 
