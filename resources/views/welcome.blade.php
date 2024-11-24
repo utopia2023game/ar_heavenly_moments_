@@ -189,14 +189,14 @@
                 /* استفاده از فونت ایران سنس */
                 /* display: flex;
                 flex-direction: column; */
-                height: 100vh;
+                height: 80vh;
                 /* overflow: hidden; */
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
             }
 
             img {
-                max-height: 20vh;
+                max-height: 50vh;
                 /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
                 max-width: 100%;
                 /* حداکثر عرض تصویر */
