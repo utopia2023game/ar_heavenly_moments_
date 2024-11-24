@@ -38,7 +38,7 @@
             /* استفاده از فونت ایران سنس */
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: 90vh;
             overflow: hidden;
             /* جلوگیری از اسکرول */
             background-color: #000000;
@@ -49,7 +49,8 @@
             font-family: 'BRoya';
             text-align: center;
             padding: 20px;
-            font-size: 1.5em;
+            height: 15vh;
+            font-size: 2em;
         }
 
         main {
@@ -60,7 +61,7 @@
         }
 
         img {
-            max-height: 80vh;
+            height: 85vh;
             /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
             max-width: 100%;
             /* حداکثر عرض تصویر */
@@ -74,6 +75,7 @@
             color: white;
             text-align: center;
             padding: 10px;
+            height: 10vh;
         }
 
         .loading {
@@ -205,8 +207,8 @@
     </header>
 
     <main>
-        <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" />
-        {{-- <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" /> --}}
+        {{-- <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" /> --}}
+        <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" />
         <div id="fallback-message" class="fallback-message">
             <div style="justify-items: center;">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
