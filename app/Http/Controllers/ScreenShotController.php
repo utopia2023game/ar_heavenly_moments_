@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ScreenShotController extends Controller
 {
-    
+
     public function uploadScreenShot()
     {
 
@@ -16,34 +16,35 @@ class ScreenShotController extends Controller
         $data['url_qr_code'] = '';
         $data['success'] = 0;
 
+        // if ($_FILES[$input['data']]['error'] != UPLOAD_ERR_OK) {
+        //     echo "Error!";
+        // }
+
         // return 'hello';
         // return filetype($input['data']);
 
-        $format = substr($input['data']->getClientOriginalName(),-4);
+        $format = substr($input['data']->getClientOriginalName(), -4);
         $file_name = $this->generateUnique() . $format;
         $destinationPath = 'uploads/';
         $input['data']->move($destinationPath, $file_name);
 
         try {
             $ScreenShot = ScreenShot::create([
-                'image_path' =>  $file_name,
+                'image_path' => $file_name,
             ]);
-            
-            $url_image = 'https://a.mersadstudio.ir/?iph='. $file_name;
+
+            $url_image = 'https://a.mersadstudio.ir/?iph=' . $file_name;
             $data['url_qr_code'] = 'https://api.qrserver.com/v1/create-qr-code/?data=' . $url_image . '&size=200x200';
             $data['success'] = $ScreenShot->id;
         } catch (\Throwable $th) {
             return $data;
         }
-        
-        
 
         // return [$data ,$this->sizeFormat($this->folderSize($destinationPath))];
 
         return $data;
     }
-    
-    
+
     public static function generateUnique()
     {
 
