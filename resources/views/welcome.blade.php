@@ -162,6 +162,15 @@
         }
 
         @media (max-width: 768px) {
+            img {
+                max-height: 40vh;
+                /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
+                max-width: 100%;
+                /* حداکثر عرض تصویر */
+                object-fit: cover;
+                display: none;
+                /* Initially hide the image */
+            }
             header {
                 font-size: 1.3em;
             }
@@ -172,6 +181,30 @@
         }
 
         @media (max-width: 450px) {
+
+            body {
+                margin: 0;
+                /* font-family: Arial, sans-serif; */
+                font-family: 'BZar', 'BTraffic', Arial, sans-serif;
+                /* استفاده از فونت ایران سنس */
+                /* display: flex;
+                flex-direction: column; */
+                height: 100vh;
+                /* overflow: hidden; */
+                /* جلوگیری از اسکرول */
+                background-color: #000000;
+            }
+
+            img {
+                max-height: 20vh;
+                /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
+                max-width: 100%;
+                /* حداکثر عرض تصویر */
+                object-fit: cover;
+                display: none;
+                /* Initially hide the image */
+            }
+
             header {
                 font-size: 0.8em;
             }
@@ -193,8 +226,7 @@
 
     <main>
         <img id="download-image" src="https://a.mersadstudio.ir/uploads/{{ $image_path }}" alt="تصویر" />
-
-        <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" />
+        {{-- <img id="download-image" src="http://127.0.0.1:8000/uploads/{{ $image_path }}" alt="تصویر" /> --}}
         <div id="fallback-message" class="fallback-message">
             <div style="justify-items: center;">
                 <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -251,7 +283,7 @@
             // Create a link element
             const link = document.createElement('a');
             link.href = img.src;
-            link.download = 'downloaded-image.jpg'; // Set the filename for download
+            link.download = 'HeavenlyMoments.jpg'; // Set the filename for download
             document.body.appendChild(link);
             link.click(); // Trigger the download
             document.body.removeChild(link); // Remove the link after downloading
@@ -269,10 +301,8 @@
                 }, 1000); // Wait for the fade-out transition
             }, 5000); // Wait for 2 seconds before starting fade-out
         }
-
     </script>
 
 </body>
 
 </html>
-
