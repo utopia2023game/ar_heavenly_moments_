@@ -162,14 +162,17 @@
         }
 
         @media (max-width: 768px) {
-            img {
-                max-height: 70vh;
-                /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
-                max-width: 100%;
-                /* حداکثر عرض تصویر */
-                object-fit: cover;
-                display: none;
-                /* Initially hide the image */
+            body {
+                margin: 0;
+                /* font-family: Arial, sans-serif; */
+                font-family: 'BZar', 'BTraffic', Arial, sans-serif;
+                /* استفاده از فونت ایران سنس */
+                /* display: flex;
+                flex-direction: column; */
+                height: 90vh;
+                overflow: hidden;
+                /* جلوگیری از اسکرول */
+                background-color: #000000;
             }
             header {
                 font-size: 1.3em;
@@ -190,19 +193,9 @@
                 /* display: flex;
                 flex-direction: column; */
                 height: 90vh;
-                /* overflow: hidden; */
+                overflow: hidden;
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
-            }
-
-            img {
-                max-height: 70vh;
-                /* حداکثر ارتفاع تصویر برابر با ارتفاع صفحه */
-                max-width: 100%;
-                /* حداکثر عرض تصویر */
-                object-fit: cover;
-                display: none;
-                /* Initially hide the image */
             }
 
             header {
