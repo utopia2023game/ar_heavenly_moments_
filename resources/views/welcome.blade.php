@@ -49,7 +49,7 @@
             font-family: 'BRoya';
             text-align: center;
             padding: 20px;
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
         main {
