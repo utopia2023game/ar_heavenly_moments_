@@ -189,7 +189,7 @@
                 /* استفاده از فونت ایران سنس */
                 /* display: flex;
                 flex-direction: column; */
-                height: 80vh;
+                height: 100vh;
                 /* overflow: hidden; */
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
