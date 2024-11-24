@@ -185,7 +185,7 @@
 
         @media (max-width: 450px) {
 
-            body {
+            /* body {
                 margin: 0;
                 /* font-family: Arial, sans-serif; */
                 font-family: 'BZar', 'BTraffic', Arial, sans-serif;
@@ -196,7 +196,7 @@
                 overflow: hidden;
                 /* جلوگیری از اسکرول */
                 background-color: #000000;
-            }
+            } */
 
             header {
                 font-size: 0.8em;
