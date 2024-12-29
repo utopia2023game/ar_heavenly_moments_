@@ -279,7 +279,11 @@
             // Create a link element
             const link = document.createElement('a');
             link.href = img.src;
-            link.download = 'HeavenlyMoments_'+ rand(99999, 100000)+ '.jpg'; // Set the filename for download
+            let min = 99999;
+            let max = 100000;
+            let randomInRange = Math.random() * (max - min) + min;
+            link.download = 'HeavenlyMoments_' + randomInRange +
+                '.jpg'; // Set the filename for download
             document.body.appendChild(link);
             link.click(); // Trigger the download
             document.body.removeChild(link); // Remove the link after downloading
