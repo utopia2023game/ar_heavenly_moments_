@@ -282,8 +282,7 @@
             let min = 99999;
             let max = 100000;
             let randomInRange = Math.random() * (max - min) + min;
-            link.download = 'HeavenlyMoments_' + randomInRange +
-                '.jpg'; // Set the filename for download
+            link.download = 'HeavenlyMoments_' + randomInRange + '.jpg'; // Set the filename for download
             document.body.appendChild(link);
             link.click(); // Trigger the download
             document.body.removeChild(link); // Remove the link after downloading
