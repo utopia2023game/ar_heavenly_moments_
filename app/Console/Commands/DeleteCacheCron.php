@@ -14,7 +14,7 @@ class DeleteCahcheCron extends Command
      *
      * @var string
      */
-    protected $signature = 'custom:deletecache';
+    protected $signature = 'delete:clear-optimize';
 
     /**
      * The console command description.
