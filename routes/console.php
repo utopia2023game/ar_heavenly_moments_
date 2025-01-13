@@ -9,6 +9,6 @@ use Illuminate\Support\Facades\Schedule;
 // })->purpose('Display an inspiring quote')->everyMinute();
 
   
-// Schedule::command('delete:cron')->everyMinute();
+Schedule::command('delete:cron')->dailyAt('13:52');
 // Schedule::command('deletecache:cron')->everyMinute();
 // Schedule::command('delete:cron')->dailyAt('01:00');
