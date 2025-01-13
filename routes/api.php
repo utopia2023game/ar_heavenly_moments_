@@ -12,4 +12,4 @@ Route::get('/user', function (Request $request) {
 
 Route::post('upload_screen_shot', [ScreenShotController::class, 'uploadScreenShot'])->name('uploadScreenShot');
 Route::get('/migrate', [ScreenShotController::class, 'migrate'])->name('migrate');
-Route::get('/clear_cache_optimize', [Controller::class, 'migrate'])->name('clearCacheOptimize');
+Route::get('/clear_cache_optimize', [Controller::class, 'clearCacheOptimize'])->name('clearCacheOptimize');
