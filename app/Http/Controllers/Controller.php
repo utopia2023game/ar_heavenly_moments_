@@ -22,7 +22,7 @@ abstract class Controller
                 Artisan::call('migrate:status');
             }
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
 
         dd(Artisan::output());
@@ -31,5 +31,12 @@ abstract class Controller
     public function migrateByDataBaseName(Request $request)
     {
         Artisan::call('migrate --database=' . $request->dbName);
+    }
+    //
+    public function clearCacheOptimize()
+    {
+        Artisan::call('optimize:clear');
+
+        info("optimize running at ". now());
     }
 }
