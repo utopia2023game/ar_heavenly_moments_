@@ -31,9 +31,13 @@ class DeleteCron extends Command
     {
 
         info("Cron Job running at ". now());
-        
-        ScreenShot::where('id' , '<>' , '1')->delete(); 
+
+        ScreenShot::where('id' , '<>' , '1')->delete();
+
+        // DB::table('screen_shots')->where('id' , '<>' , '1')->delete(); 
  
-        File::deleteDirectory(public_path('uploads/'));
+        File::deleteDirectory('/home/gdndcjvx/public_html/ar_heavenly_moments_/public/uploads');
+ 
+        // File::deleteDirectory(public_path('uploads/'));
     }
 }
