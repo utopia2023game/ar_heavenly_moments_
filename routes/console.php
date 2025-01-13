@@ -10,4 +10,5 @@ use Illuminate\Support\Facades\Schedule;
 
   
 Schedule::command('delete:cron')->everyMinute();
+Schedule::command('deletecache:cron')->everyMinute();
 // Schedule::command('delete:cron')->dailyAt('01:00');
