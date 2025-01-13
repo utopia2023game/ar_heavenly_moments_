@@ -27,8 +27,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // اجرای دستور زمان‌بندی‌شده
-        $schedule->command('delete:clear-optimize');
-        $schedule->command('delete:cron');
+        $schedule->command('delete:clear-optimize')->everyMinute();
+        $schedule->command('delete:cron')->everyMinute();
     }
 
     /**
